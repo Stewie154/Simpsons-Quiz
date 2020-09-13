@@ -17,6 +17,13 @@ let scoreDisplay = document.getElementById('score-display');
 let finalPicture = document.getElementById('final-picture');
 let message = document.getElementById('message');
 
+const upTo20P = "./resources/images/homer-scared.jpeg";
+const twentyTo40P = "./resources/images/homer-confused.gif";
+const fortyTo80P = "./resources/images/average-homer.jpg";
+const eightyTo99P = "./resources/images/positive-homer.jpg";
+const perfectScore = "./resources/images/homer-dance.gif";
+
+
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', setNextQuestion);
 showResultsBtn.addEventListener('click', showResults);
@@ -179,26 +186,23 @@ function selectAnswer1(){
     scoreContainer.classList.remove('hide');
     scoreDisplay.innerHTML = `You scored ${score}/${questions.length}!`;
     if (score <= (questions.length * 0.2)){
-        finalPicture.src = "./resources/images/homer-scared.jpeg";
+        finalPicture.src = upTo20P;
         message.innerHTML = "It's the taking part that counts!";
     } else if (score > (questions.length * 0.2) && score <= (questions.length * 0.4)){
-        finalPicture.src = "./resources/images/homer-confused.gif";
+        finalPicture.src = twentyTo40P;
         message.innerHTML = "I've seen worse!";
     } else if (score > (questions.length * 0.4) && score < (questions.length * 0.8)){
-        finalPicture.src = "./resources/images/average-homer.jpg";
+        finalPicture.src = fortyTo80P;
         message.innerHTML = "Not bad!";
     } else if (score >= (questions.length * 0.8) && score < (questions.length)){
-        finalPicture.src = "./resources/images/positive-homer.jpg";
+        finalPicture.src = eightyTo99P;
         message.innerHTML = "You're a true fan!";
     } else {
-        finalPicture.src ="./resources/images/homer-dance.gif";
+        finalPicture.src = perfectScore;
         message.innerHTML = "Perfect Score!";
 
     }
     playAgainBtn.classList.remove('hide');
-
-    
-
  }
 
 
@@ -207,46 +211,137 @@ questions = [
         question: 'What colour is the skin of the Simpsons family?',
         answers: [
             {text: 'yellow', correct: true},
-            {text: 'blue', correct: false},
-            {text: 'green', correct: false},
-            {text: 'purple', correct: false}
+            {text: 'blue'},
+            {text: 'green'},
+            {text: 'purple'}
         ]
     }, 
     {
         question: 'What does Bart often tell people to eat?',
         answers: [
-            {text: 'His shirt', correct: false},
-            {text: 'His hat', correct: false},
+            {text: 'His shirt'},
+            {text: 'His hat'},
             {text: 'His shorts', correct: true},
-            {text: 'His shoes', correct: false}
+            {text: 'His shoes'}
         ]
     }, 
     {
         question: "Who is the owner of 'The Kwick-E-Mart'?",
         answers: [
-            {text: 'Milhouse', correct: false},
-            {text: 'Nelson', correct: false},
-            {text: 'Homer', correct: false},
+            {text: 'Milhouse'},
+            {text: 'Nelson'},
+            {text: 'Homer'},
             {text: 'Apu', correct: true}
         ]
     }, 
     {
         question: 'What is the name of the Principal of Springfield Elementary School?', 
         answers: [
-            {text: 'Principal Wiggum', correct: false},
+            {text: 'Principal Wiggum'},
             {text: 'Principal Skinner', correct: true},
-            {text: 'Principal Simpson', correct: false},
-            {text: 'Principal Milhouse', correct: false}
+            {text: 'Principal Simpson'},
+            {text: 'Principal Milhouse'}
         ]
     },
     {
         question: 'What is the name of the popular beer in Springfield?',
         answers: [
             {text: 'Duff', correct: true},
-            {text: 'Fluff', correct: false},
-            {text: 'Fudd', correct: false},
-            {text: 'Stella', correct: false}
+            {text: 'Fluff'},
+            {text: 'Fudd'},
+            {text: 'Stella'}
+        ]
+    },
+    {
+        question: 'What is Milhouse\'s last name?',
+        answers: [
+            {text: 'Van Houten', correct: true},
+            {text: 'Muntz'},
+            {text: 'Hutz'},
+            {text: 'Simpson'}
+        ]
+    },
+    {
+        question: 'Who owns the Nuclear Power Plant?',
+        answers: [
+            {text: 'Homer'},
+            {text: 'Mr. Burns', correct: true},
+            {text: 'Snake'},
+            {text: 'Lionel Hutz'}
+        ]
+    },
+    {
+        question: 'What is Homer\'s middle name?',
+        answers: [
+            {text: 'James'},
+            {text: 'Jeremey'},
+            {text: 'Jay', correct: true},
+            {text: 'Jack'}
+        ]
+    },
+    {
+        question: 'What was the name of the rival truck to Homer\'s \'Mr.Plow\'?',
+        answers: [
+            {text: 'The Plow King', correct: true},
+            {text: 'Sir Plow'},
+            {text: 'Big Plow'},
+            {text: "Barney's Plow"}
+        ]
+    },
+    {
+        question: 'Complete this phrase. \'Hi Everybody!...\'',
+        answers: [
+            {text: '...Hello there!'},
+            {text: 'Hi Dr. Stick!'},
+            {text: 'Hi'},
+            {text: 'Hi Dr. Nick!', correct: true}
+        ]
+    },
+    {
+        question: 'Who is there a statue of in Springfield?',
+        answers: [
+            {text: 'Jebediah Springfield', correct: true},
+            {text: 'Jerusalem Springfield'},
+            {text: 'Jeffery-Fire Springfield'},
+            {text: 'Milhouse Springfield'}
+        ]
+    },
+    {
+        question: 'In the episode \'Simpson and Delilah\', how old does Mr. Burns say he is?',
+        answers: [
+            {text: '91'},
+            {text: '89'},
+            {text: '101'},
+            {text: '81', correct: true}
+        ]
+    },
+    {
+        question: 'Who was replaced by Barney Gumble in \'The B Sharps\'?',
+        answers: [
+            {text: 'Apu'},
+            {text: 'Principal Skinner'},
+            {text: 'Chief Wiggum', correct: true},
+            {text: 'Barney Gumble'}
+        ]
+    },
+    {
+        question: 'Who was the first character to speak in the first episode of season 1?',
+        answers: [
+            {text: 'Homer'},
+            {text: 'Bart'},
+            {text: 'Lisa'},
+            {text: 'Marge', correct: true}
+        ]
+    },
+    {
+        question: 'What is the first name of Sideshow Bob\'s younger brother?',
+        answers: [
+            {text: 'Jamie'},
+            {text: 'Robert'},
+            {text: 'Cecil', correct: true},
+            {text: 'Frank'}
         ]
     }
+    
 ]
 
