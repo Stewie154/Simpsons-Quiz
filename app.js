@@ -185,26 +185,49 @@ function selectAnswer1(){
     questionContainer.classList.add('hide');
     scoreContainer.classList.remove('hide');
     scoreDisplay.innerHTML = `You scored ${score}/${questions.length}!`;
-    if (score <= (questions.length * 0.2)){
-        finalPicture.src = upTo20P;
-        message.innerHTML = "It's the taking part that counts!";
-    } else if (score > (questions.length * 0.2) && score <= (questions.length * 0.4)){
-        finalPicture.src = twentyTo40P;
-        message.innerHTML = "I've seen worse!";
-    } else if (score > (questions.length * 0.4) && score < (questions.length * 0.8)){
-        finalPicture.src = fortyTo80P;
-        message.innerHTML = "Not bad!";
-    } else if (score >= (questions.length * 0.8) && score < (questions.length)){
-        finalPicture.src = eightyTo99P;
-        message.innerHTML = "You're a true fan!";
-    } else {
-        finalPicture.src = perfectScore;
-        message.innerHTML = "Perfect Score!";
-
+    scorePercentage = ((score / questions.length) * 100).toFixed(0);
+    for(let i = 0; i < picturesAndMessages.length; i++){
+        if (scorePercentage >= picturesAndMessages[i].percentageLowerLimit && scorePercentage <= picturesAndMessages[i].percentageUpperLimit){
+            finalPicture.src = picturesAndMessages[i].picture;
+            message.innerHTML = picturesAndMessages[i].message;
+        }
     }
     playAgainBtn.classList.remove('hide');
  }
 
+ picturesAndMessages = [
+    {
+        percentageLowerLimit: 0,
+        percentageUpperLimit: 20,
+        picture: upTo20P,
+        message: 'It\'s the taking part that counts!'
+    },
+    {
+        percentageLowerLimit: 21,
+        percentageUpperLimit: 40,
+        picture: twentyTo40P,
+        message: 'I\'ve seen worse!'
+    },
+    {
+        percentageLowerLimit: 41,
+        percentageUpperLimit: 80,
+        picture: fortyTo80P,
+        message: 'Not bad!'
+    },
+    {
+        percentageLowerLimit: 81,
+        percentageUpperLimit: 99,
+        picture: eightyTo99P,
+        message: 'You\'re a true fan!'
+    },
+    {
+        percentageLowerLimit: 100,
+        percentageUpperLimit: 100,
+        picture: perfectScore,
+        message: 'Perfect Score!'
+    }
+]
+ 
 
 questions = [
     {
@@ -343,5 +366,7 @@ questions = [
         ]
     }
     
-]
+];
+
+
 
