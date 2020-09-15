@@ -187,9 +187,10 @@ function selectAnswer1(){
     scoreDisplay.innerHTML = `You scored ${score}/${questions.length}!`;
     scorePercentage = ((score / questions.length) * 100).toFixed(0);
     for(let i = 0; i < picturesAndMessages.length; i++){
-        if (scorePercentage >= picturesAndMessages[i].percentageLowerLimit && scorePercentage <= picturesAndMessages[i].percentageUpperLimit){
+        if (scorePercentage <= picturesAndMessages[i].percentageLimit){
             finalPicture.src = picturesAndMessages[i].picture;
             message.innerHTML = picturesAndMessages[i].message;
+            break; 
         }
     }
     playAgainBtn.classList.remove('hide');
@@ -197,32 +198,27 @@ function selectAnswer1(){
 
  picturesAndMessages = [
     {
-        percentageLowerLimit: 0,
-        percentageUpperLimit: 20,
+        percentageLimit: 20,
         picture: upTo20P,
         message: 'It\'s the taking part that counts!'
     },
     {
-        percentageLowerLimit: 21,
-        percentageUpperLimit: 40,
+        percentageLimit: 40,
         picture: twentyTo40P,
         message: 'I\'ve seen worse!'
     },
     {
-        percentageLowerLimit: 41,
-        percentageUpperLimit: 80,
+        percentageLimit: 80,
         picture: fortyTo80P,
         message: 'Not bad!'
     },
     {
-        percentageLowerLimit: 81,
-        percentageUpperLimit: 99,
+        percentageLimit: 99,
         picture: eightyTo99P,
         message: 'You\'re a true fan!'
     },
     {
-        percentageLowerLimit: 100,
-        percentageUpperLimit: 100,
+        percentageLimit: 100,
         picture: perfectScore,
         message: 'Perfect Score!'
     }
