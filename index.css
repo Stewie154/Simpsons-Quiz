@@ -15,7 +15,9 @@ body{
     background-color: white;
     margin: auto;
     border: 1px solid black;
-    border-radius: 5px;
+    border-top: none;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .title{
@@ -32,12 +34,19 @@ body{
 }
 
 .question-container{
-    width: 60%;
+    /*increased width, as on smaller screens the buttons went outside the question container*/
+    width: 80%;
     margin: auto; 
+    text-align: center;
     background-color: #ffffff;
-    margin-top: 5vw;
-    margin-bottom: 5vw;
     box-shadow: 0 0 10px 2px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+    
 }
 
 .question{
@@ -68,6 +77,14 @@ body{
 .btn:hover{
     background-color: whitesmoke;
 }
+.start{
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
 
 .score-container{
     margin: auto;
@@ -77,6 +94,11 @@ body{
     background-color: #ffffff;
     text-align: center;
     box-shadow: 0 0 10px 2px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .score{
@@ -108,5 +130,42 @@ body{
     display: none;
 }
 
+@media only screen and (min-width: 568px) and (max-height: 635px){
+   
+    .head-container{
+        display: none;
+    }
+
+}
+
+
+@media only screen and (min-width: 1250px){
+    .question-container{
+        margin-top: 5vw; 
+    }
+}
+
+@media only screen and (min-width: 1450px){
+    .question-container{
+        width: 95%;
+        margin-top: 6vw; 
+    }
+    .question{
+        font-size: 4vw; 
+    }
+
+    .score-container{
+        margin-top: 6vw; 
+    }
+    .score{
+        font-size: 3vw;
+    }
+    .message{
+        font-size: 3vw;
+    }
+    #play-again-btn{
+        font-size: 2vw;
+    }
+}
 
 

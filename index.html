@@ -15,44 +15,29 @@
         </div>
     </header>
     <main>
-        <div id="question1" class="question-container">
-            <div class="question">1. What Colour are Bart's shorts?</div>
-            <div id="question1Btns" class="answer-btns">
-                <button id="correct1" class="btn">Blue</button>
-                <button class="btn">Green</button>
-                <button class="btn">Yellow</button>
-                <button class="btn">Purple</button>
+        <div id ="question-container" class="question-container">
+            <div id="question" class="question hide">Question</div>
+            <div id="answer-btns" class="answer-btns hide">
+                <button id="answer1" class="btn">Answer 1</button>
+                <button id="answer2" class="btn">Answer 2</button>
+                <button id="answer3" class="btn">Answer 3</button>
+                <button id="answer4" class="btn">Answer 4</button>
             </div>
+            <button id="start-btn" class="btn start">Start</button>
+            <button id="next-btn" class="btn start hide">Next Question</button>
+            <button id="show-results" class="btn start hide">Show Results</button>
         </div>
 
-        <div id="question2" class="question-container">
-            <div class="question">2. Whose bar/tavern does Homer frequently visit?</div>
-            <div id="question2Btns" class="answer-btns">
-                <button class="btn">Joe's</button>
-                <button id ="correct2" class="btn">Moe's</button>
-                <button class="btn">Jeff's</button>
-                <button class="btn">Bart's</button>
-            </div>
+
+        
+        <div id="score-container" class="score-container hide">
+            <div id="score-display" class="score">You scored 0/0!</div>
+            <img id="final-picture" class ="final-picture" src="./resources/images/positive-homer.jpg" alt="homer-woo-hoo">
+            <div id="message" class="message">You're a True Fan!</div>
+            <button id="play-again-btn" class="btn start hide">Play Again?!</button>
         </div>
-
-        <div id="question3" class="question-container">
-            <div class="question">3. What is the name of the local school bully?</div>
-            <div id="question3Btns" class="answer-btns">
-                <button class="btn">Milhouse</button>
-                <button class="btn">Sherry</button>
-                <button class="btn">Lisa</button>
-                <button id="correct3" class="btn">Nelson</button>
-            </div>
-        </div>
-
-        <footer>
-            <div id="score-container" class="score-container hide">
-                <div id="score-display" class="score">You scored 0/0!</div>
-                <img id="final-picture" class ="final-picture" src="./resources/images/positive-homer.jpg" alt="homer-woo-hoo">
-                <div id="message" class="message">You're a True Fan!</div>
-
-            </div>
-        </footer>
+        
+        
     </main>  
     
     <script src="app.js"></script>
