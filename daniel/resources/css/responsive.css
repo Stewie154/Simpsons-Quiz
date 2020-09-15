@@ -1,0 +1,33 @@
+@media screen and (max-width: 1023px) {
+    :root {
+        --large-font: 3rem;
+        --medium-font: 1.5rem;
+        --small-font: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    :root {
+        --large-font: 2rem;
+        --medium-font: 1.3rem;
+        --small-font: 1rem;
+        --x-small-font: 0.8rem;
+
+        --block-padding: 12px 25px;
+    }
+
+    footer {
+        min-height: 140px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    :root {
+        --large-font: 1.5rem;
+        --medium-font: 1.2rem;
+        --small-font: 0.8rem;
+        --x-small-font: 0.6rem;
+
+        --block-padding: 12px;
+    }
+}

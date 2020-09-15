@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simpsons Quiz</title>
+
+    <!-- Adding v= onto the URL so we don't have an old cache of the CSS -->
+    <link rel="stylesheet" href="resources/css/main.css?v=2">
+    <link rel="stylesheet" href="resources/css/responsive.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body class='flex flex-ai-c flex-jc-sb flex-d-c'>
+    <header class='flex flex-ai-c flex-d-c text-center'>
+        <h1>The Simpsons quiz!</h1>
+        <div class="header-text">Welcome to The Simpsons Quiz. Answer the questions and see what kind of fan you are!
+        </div>
+    </header>
+
+    <main>
+        <div id="quiz">
+            <div class='question-container flex-column text-center'>
+                <div class='question-text' id='question'></div>
+                <div class="question-buttons-outer">
+                    <div class='question-buttons flex-row w-100' id='question-options'></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class='flex'>
+        <div id="score-container" class="flex-column">
+            <div class="score-value">
+                You scored <span id="score">0</span>/<span id="max-score">0</span>
+            </div>
+            <div class="score-text" id="score-message"></div>
+            <div class="button-small" onclick="quiz.start();">Try again</div>
+        </div>
+    </footer>
+
+    <!-- Adding v= onto the URL so we don't have an old cache of the JS -->
+    <script src='resources/js/main.js?v=5'></script>
+    <script>
+        // In an ideal scenario, most of this data (except the answers) would come from PHP/MySQL.
+        const questions = [{
+                question: 'What Colour are Bart\'s shorts?',
+                answer: 0,
+                options: ['Blue', 'Green', 'Yellow', 'Purple']
+            },
+            {
+                question: 'Whose bar/tavern does Homer frequently visit?',
+                answer: 1,
+                options: ['Joe\'s', 'Moe\'s', 'Jeff\'s', 'Bart\'s']
+            },
+            {
+                question: 'What is the name of the local school bully?',
+                answer: 3,
+                options: ['Milhouse', 'Sherry', 'Lisa', 'Nelson']
+            },
+            {
+                question: 'Which of the following is not a Bart Simpson catch-phrase?',
+                answer: 0,
+                options: ['Ha-ha!', 'Ay-caramba!', 'Eat my shorts!', 'Don\'t have a cow man!']
+            }
+        ];
+
+        // Initialise the quiz when the page has fully loaded.
+        (function () {
+            quiz.init(questions);
+        })();
+    </script>
+</body>
+
+</html>
